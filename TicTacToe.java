@@ -151,6 +151,27 @@ public class TicTacToe extends basicpackage.BasicBoard implements Game {
 		// If trough all checks and no true has been already returned, return false. The game is still on
 		return false;
 	}
+	
+	/**
+	 * If game ends with no winner
+	 * 
+	 * @return - true if every field is occupied
+	 */
+	public boolean noMoreFreeFields(){
+		// Set flag to true
+		boolean full = true;
+		
+		// Go trough every field
+		for(int i = 0; i < board.length; i++){
+			for(int j = 0; j < board.length; j++){
+				// Set flag to false if found empty field
+				if(board[i][j] == 0) full = false; 
+			}
+		}
+		
+		// Return flag
+		return full;
+	}
 
 	/**
 	 * Prints the current state of the board

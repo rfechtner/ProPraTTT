@@ -11,6 +11,9 @@ public class Runner {
     // Flag for valid dimension of board (minimum = 3)
     boolean validDimension = false;
     
+    //Flag for winner or draw
+    boolean draw = false;
+    
     // While Flag not changed
     while(validDimension == false){
     	// If user started application with parameter
@@ -126,14 +129,22 @@ public class Runner {
       validTurn=false;
 
       // Continue until game over
+      if(ttt.noMoreFreeFields()){
+    	  draw = true;
+    	  break;
+      }
     }
     
     // Once game over == true
     // Announce winner based on the current (winning) turn
-    if(turn % 2 != 0) {
-    	System.out.print("Player 1 hat gewonnen!");
+    if(draw){
+    	System.out.print("Draw!");
     } else {
-    	System.out.print("Player 2 hat gewonnen!");
+    	if(turn % 2 != 0) {
+    		System.out.print("Player 1 has won!");
+    	} else {
+    		System.out.print("Player 2 has won!");
+    	}
     }
     
   }
