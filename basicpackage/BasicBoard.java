@@ -34,8 +34,8 @@ public class BasicBoard{
 
 	public String toString(){
 		String out;
-		out  = "The board type is : " 	+ this.boardtype + "\n";
-		out += "The rules are     : "	+ this.rules + "\n";
+		out  = "The board type is : " 	+ BasicBoard.boardtype + "\n";
+		out += "The rules are     : "	+ BasicBoard.rules + "\n";
 		out += "The boardname is   :" 	+ this.getBoardname() + "\n";
 		return out;
 	}
